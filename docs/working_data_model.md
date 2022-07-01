@@ -25,6 +25,7 @@ This is still heavily a WIP, just writing down my current thoughts
                     {   // Things in the equipped category have their "effects" applied
                         "name": "Example item of displaying",
                         "weight": 0,
+                        "bulk": 0,
                         "value": 0,
                         "quantity": 1,
                         "effects": [ /* Same effect objects as before */ ]
@@ -33,11 +34,12 @@ This is still heavily a WIP, just writing down my current thoughts
             }, 
             {
                 "name": "worn",
-                "equipped": true, // a holdover of the fact that you should be able to drop a container, doesn't mean much for the default equipped container, but consistency
+                "equipped": true, // equipped simply means 
                 "contents": [ // List of item objects
                     {   // Things in the equipped category have their "effects" applied
                         "name": "Display item of exampling",
                         "weight": 2,
+                        "bulk": 0,
                         "value": 1,
                         "quantity": 1,
                         "effects": [ /* Same effect objects as before */ ]
