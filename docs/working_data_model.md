@@ -19,13 +19,26 @@ This is still heavily a WIP, just writing down my current thoughts
         ],
         "inventory": [ // list of containers, with one default container "equipped" or maybe "carried"?
             {
-                "name": "equipped",
+                "name": "held",
                 "equipped": true, // a holdover of the fact that you should be able to drop a container, doesn't mean much for the default equipped container, but consistency
                 "contents": [ // List of item objects
                     {   // Things in the equipped category have their "effects" applied
                         "name": "Example item of displaying",
                         "weight": 0,
                         "value": 0,
+                        "quantity": 1,
+                        "effects": [ /* Same effect objects as before */ ]
+                    }
+                ] // ...
+            }, 
+            {
+                "name": "worn",
+                "equipped": true, // a holdover of the fact that you should be able to drop a container, doesn't mean much for the default equipped container, but consistency
+                "contents": [ // List of item objects
+                    {   // Things in the equipped category have their "effects" applied
+                        "name": "Display item of exampling",
+                        "weight": 2,
+                        "value": 1,
                         "quantity": 1,
                         "effects": [ /* Same effect objects as before */ ]
                     }
