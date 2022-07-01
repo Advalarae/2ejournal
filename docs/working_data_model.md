@@ -29,7 +29,7 @@ This is still heavily a WIP, just writing down my current thoughts
                         "quantity": 1,
                         "effects": [ /* Same effect objects as before */ ]
                     }
-                ] 
+                ] // ...
             }
         ], // will likely add a "statuses" to handle temporary effects. i.e. blinded, restrained, etc...
         "lore": {
