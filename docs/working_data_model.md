@@ -2,7 +2,7 @@
 
 This is still heavily a WIP, just writing down my current thoughts
 
-```json
+```js
 {
     "character": {
         "stats": {
