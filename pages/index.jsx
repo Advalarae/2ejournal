@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { FaBars } from 'react-icons/fa'
 
+import Skills from '../components/main_sheet/Skills';
+
 export default function Home() {
   return (
     <>
@@ -17,7 +19,7 @@ export default function Home() {
         </div>
       </div>
       <div className='h-screen w-screen bg-gray-700'>
-
+        <Skills />
       </div>
     </>
   )
