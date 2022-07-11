@@ -20,6 +20,7 @@ export default function Home() {
       </div>
       <div className='h-screen w-screen bg-gray-700'>
         <Skills />
+        {skills?.map((p, index) => <p key={index}>{p}</p>)}
       </div>
     </>
   )
