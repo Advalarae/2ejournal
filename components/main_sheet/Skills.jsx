@@ -14,38 +14,51 @@ const stats = {
 };
 
 const baseSkills = {
-    'acrobatics': { stat: 'dex', training: 'untrained' },
-    'arcana': { stat: 'int', training: 'untrained' },
-    'athletics': { stat: 'str', training: 'untrained' },
-    'crafting': { stat: 'int', training: 'untrained' },
-    'deception': { stat: 'cha', training: 'expert' },
-    'diplomacy': { stat: 'cha', training: 'untrained' },
-    'intimidation': { stat: 'cha', training: 'untrained' },
-    'lore: uwuing': { stat: 'int', training: 'untrained' },
-    'medicine': { stat: 'wis', training: 'legendary' },
-    'occultism': { stat: 'int', training: 'untrained' },
-    'performance': { stat: 'cha', training: 'untrained' },
-    'religion': { stat: 'wis', training: 'untrained' },
-    'society': { stat: 'int', training: 'untrained' },
-    'stealth': { stat: 'dex', training: 'untrained' },
-    'survival': { stat: 'wis', training: 'trained' },
-    'thievery': { stat: 'dex', training: 'untrained' },
+    'acrobatics': { stat: 'dex', training: 'untrained', modifier: 0 },
+    'arcana': { stat: 'int', training: 'untrained', modifier: 0 },
+    'athletics': { stat: 'str', training: 'untrained', modifier: 0 },
+    'crafting': { stat: 'int', training: 'untrained', modifier: 0 },
+    'deception': { stat: 'cha', training: 'expert', modifier: 0 },
+    'diplomacy': { stat: 'cha', training: 'untrained', modifier: 0 },
+    'intimidation': { stat: 'cha', training: 'untrained', modifier: 0 },
+    'lore: uwuing': { stat: 'int', training: 'trained', modifier: 0 },
+    'medicine': { stat: 'wis', training: 'legendary', modifier: 0 },
+    'occultism': { stat: 'int', training: 'untrained', modifier: 0 },
+    'performance': { stat: 'cha', training: 'untrained', modifier: 0 },
+    'religion': { stat: 'wis', training: 'untrained', modifier: 0 },
+    'society': { stat: 'int', training: 'untrained', modifier: 0 },
+    'stealth': { stat: 'dex', training: 'untrained', modifier: 0 },
+    'survival': { stat: 'wis', training: 'trained', modifier: 0 },
+    'thievery': { stat: 'dex', training: 'untrained', modifier: 0 },
 };
 
+
+const colors = {
+    'untrained': 'bg-slate-700',
+    'trained': 'bg-green-700',
+    'expert': 'bg-blue-700',
+    'master': 'bg-purple-700',
+    'legendary': 'bg-orange-700',
+}
 
 
 export default function Skills(/*{ skills, level, stats }*/) {
     return (
         <div className="flex flex-col justify-center items-center">
-            <ul className='bg-gray-900 rounded text-white p-3'>
+            <ul className='bg-gray-900 rounded text-slate-100 py-3 pl-3 pr-2'>
                 {Object.entries(baseSkills).map(([skill, skillObj], index) => {
                     const mod = getModifier(stats[skillObj.stat]) + getProficiencyBonus(level, skillObj.training);
 
-                    return <li className='cursor-pointer select-none group flex p-0.5' key={index}>
-                        <span className='bg-slate-800 first-letter:capitalize px-2 py-0.5 rounded mr-2'>{skillObj.training[0]}</span>
-                        <span className='w-7 min-w-max group-hover:text-red-400 group-hover:scale-110 ease-in-out duration-75 font-mono'>
+                    // random number between 1 and 20
+                    const roll = Math.floor(Math.random() * 20) + 1;
+
+                    
+
+                    return <li onClick={() => alert(`${roll} + ${mod} = ${roll + mod}`)} className='cursor-pointer select-none group flex p-0.5 pr-2 rounded hover:bg-slate-800 ease-in-out duration-200' key={index}>
+                        <span className={`${colors[skillObj.training]} first-letter:capitalize text-center py-0.5 w-6 rounded mr-3`}>{skillObj.training[0]}</span>
+                        <span className='mr-2 w-7 min-w-max font-mono table-cell'>
                             {(mod>=0?'+':'') + mod}</span>
-                        <span className='pl-2 first-letter:capitalize group-hover:text-red-400'>
+                        <span className='first-letter:capitalize table-cell align-middle'>
                             {skill}</span>
                     </li>
                 })}

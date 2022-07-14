@@ -7,7 +7,7 @@ function SidebarButton({setCollapsed, collapsed}) {
         <button className='relative h-12 w-12 border rounded-3xl border-slate-700 hover:bg-slate-500 hover:rounded-xl transition-all duration-150 ease-linear'
                 onClick={() => setCollapsed(!collapsed)}>
                 {/* <FaBars className='text-white inline-block' size={'25px'} /> */}
-                <Image src="/2ejlogo.svg" alt="uwu" layout='fill' objectFit='contain' />
+                <Image priority src="/2ejlogo.svg" alt="uwu" layout='fill' objectFit='contain' />
         </button>
         
     );
