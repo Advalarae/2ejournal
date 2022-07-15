@@ -56,8 +56,6 @@ export default function Skills(/*{ skills, level, stats }*/) {
                         alert(`roll(d20 + ${mod}) = ${roll} + ${mod} = ${roll + mod}`)
                     }
 
-                    
-
                     return <li onClick={roll} className='relative cursor-pointer select-none group flex p-0.5 pr-2 rounded hover:bg-slate-800 ease-in-out duration-200' key={index}>
                         <span className={`${colors[skillObj.training]} first-letter:capitalize text-center py-0.5 w-6 rounded mr-3`}>{skillObj.training[0]}</span>
                         <span className='mr-2 w-7 min-w-max font-mono table-cell align-middle leading-relaxed'>
