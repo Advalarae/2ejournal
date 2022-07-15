@@ -14,7 +14,7 @@ function SidebarButton({setCollapsed, collapsed}) {
 }
 
 export default function Sidebar(props) {
-    let [collapsed, setCollapsed] = React.useState(false);
+    let [collapsed, setCollapsed] = React.useState(true);
 
     return (
     <div className={`fixed top-0 left-0 h-screen bg-gray-900 shadow ${collapsed ? 'w-16' : 'w-64'} ease-in-out duration-300`}>

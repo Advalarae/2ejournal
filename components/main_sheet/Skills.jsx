@@ -50,15 +50,19 @@ export default function Skills(/*{ skills, level, stats }*/) {
                     const mod = getModifier(stats[skillObj.stat]) + getProficiencyBonus(level, skillObj.training);
 
                     // random number between 1 and 20
-                    const roll = Math.floor(Math.random() * 20) + 1;
+                    const roll = () => { 
+                        const roll = Math.floor(Math.random() * 20) + 1; 
+
+                        alert(`roll(d20 + ${mod}) = ${roll} + ${mod} = ${roll + mod}`)
+                    }
 
                     
 
-                    return <li onClick={() => alert(`${roll} + ${mod} = ${roll + mod}`)} className='cursor-pointer select-none group flex p-0.5 pr-2 rounded hover:bg-slate-800 ease-in-out duration-200' key={index}>
+                    return <li onClick={roll} className='relative cursor-pointer select-none group flex p-0.5 pr-2 rounded hover:bg-slate-800 ease-in-out duration-200' key={index}>
                         <span className={`${colors[skillObj.training]} first-letter:capitalize text-center py-0.5 w-6 rounded mr-3`}>{skillObj.training[0]}</span>
-                        <span className='mr-2 w-7 min-w-max font-mono table-cell'>
+                        <span className='mr-2 w-7 min-w-max font-mono table-cell align-middle leading-relaxed'>
                             {(mod>=0?'+':'') + mod}</span>
-                        <span className='first-letter:capitalize table-cell align-middle'>
+                        <span className='first-letter:capitalize table-cell align-middle leading-relaxed'>
                             {skill}</span>
                     </li>
                 })}
